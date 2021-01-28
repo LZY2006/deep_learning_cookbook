@@ -1,13 +1,13 @@
 # Deep Learning Cookbook Notebooks
 
-This repository contains 35 python notebooks demonstrating most of the key
-machine learning techniques in Keras. The notebooks accompany the book
-[Deep Learning Cookbook](https://www.amazon.com/Deep-Learning-Cookbook-Practical-Recipes) but work well on their own. A GPU is not required to run them,
-but on a mere CPU things will take quite a while.
+该存储库包含35个python笔记本，展示了大部分关键
+Keras中的机器学习技术。 笔记本随书
+[Deep Learning Cookbook](https://www.amazon.com/Deep-Learning-Cookbook-Practical-Recipes) 但只看书就很好了， 不需要GPU就可以运行这些笔记本，
+但是仅使用CPU会花费相当长的时间。
 
-## Getting started
+## 入门
 
-To get started, setup a virtual env, install the requirements and start the notebook server:
+首先，设置虚拟环境，安装环境要求，然后启动笔记本服务器：
 
 ```Bash
 git clone https://github.com/DOsinga/deep_learning_cookbook.git
@@ -18,27 +18,19 @@ pip install -r requirements.txt
 jupyter notebook
 ```
 
-## The notebooks
+## 包含的笔记本
 
 #### [03.1 Using pre trained word embeddings](https://github.com/DOsinga/deep_learning_cookbook/blob/master/03.1%20Using%20pre%20trained%20word%20embeddings.ipynb)
 
-In this notebook, we'll use a pretrained word embedding model (Word2Vec) to explore how word embeddings allow us
-to explore similarities between words and relationships between words. For example, find the capital of a country
-or the main products of a company. We'll finish with a demonstration of using t-SNE to plot high dimensional
-spaces on a 2D graph. 
+在本笔记本中，我们使用预训练的单词嵌入模型（Word2Vec）来使用单词嵌入来探索单词之间的相似性以及单词之间的关系。 例如，找到一个国家的首都或公司的主要产品。 我们会使用t-SNE在2D图形上绘制高维空间，说明内部原理。
 
 #### [03.2 Domain specific ranking using word2vec cosine distance](https://github.com/DOsinga/deep_learning_cookbook/blob/master/03.2%20Domain%20specific%20ranking%20using%20word2vec%20cosine%20distance.ipynb)
 
-Building on the previous recipe, we'll use the distances between the words to do domain specific rankings. Specifically
-we'll look at countries. First we create a small classifier to find all countries in the set of words, based on a small
-sample. We'll then use a similar approach to show relevance for specific words for countries. For example, since
-cricket is closer to India than to Germany, cricket is probably more relevant. We can plot this on a world map which
-lights up countries based on their relevance for specific words.
+在前面的的基cookbook的基础上，我们会用单词之间的距离进行特定领域的排名。 具体来说，我们将研究国家。 首先，我们基于小样本创建小分类器，然后在单词集中找到所有国家。 然后，我们用类似的方法，展示对各国单词的相关性。 例如，由于板球比德国更接近印度，板球可能是更相关。 我们可以在世界地图画出各个国家的相关性。
 
 #### [04.1 Collect movie data from Wikipedia](https://github.com/DOsinga/deep_learning_cookbook/blob/master/04.1%20Collect%20movie%20data%20from%20Wikipedia.ipynb)
 
-This notebook shows how to download a dump of the Wikipedia and parse it to extract structured data by using the
-category and template information. We'll use this to create a set of movies including rating data.
+本笔记本展示了如何把维基百科的数据下载导出文件，并使用类别和模板信息解析、提取、结构化数据。 我们用数据创建一组包含评级数据的电影信息。
 
 #### [04.2 Build a recommender system based on outgoing Wikipedia links](https://github.com/DOsinga/deep_learning_cookbook/blob/master/04.2%20Build%20a%20recommender%20system%20based%20on%20outgoing%20Wikipedia%20links.ipynb)
 
