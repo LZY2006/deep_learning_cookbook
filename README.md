@@ -5,7 +5,7 @@ Keras中的机器学习技术。 笔记本随书
 [Deep Learning Cookbook](https://www.amazon.com/Deep-Learning-Cookbook-Practical-Recipes) 但只看书就很好了， 不需要GPU就可以运行这些笔记本，
 但是仅使用CPU会花费相当长的时间。
 
-## 入门
+## 准备工作
 
 首先，设置虚拟环境，安装环境要求，然后启动笔记本服务器：
 
@@ -34,65 +34,46 @@ jupyter notebook
 
 #### [04.2 Build a recommender system based on outgoing Wikipedia links](https://github.com/DOsinga/deep_learning_cookbook/blob/master/04.2%20Build%20a%20recommender%20system%20based%20on%20outgoing%20Wikipedia%20links.ipynb)
 
-Based on the structured data extracted in the previous notebook, we'll train a network that learns to predict a movie
-based on the outgoing links on the corresponding Wikipedia page. This creates embeddings for the movies. This in
-turn lets us recommend movies based on other movies - similar movies are next to each other in the embedding
-space.
+基于上一本笔记本中提取的结构化数据，我们会训练一个神经网络，该网络根据相应的维基百科页面的链接预测电影的评级。我们会为电影创建嵌入。 反过来，我们可以根据其他电影来推荐电影的嵌入空间中相似的电影。
 
 #### [05.1 Generating Text in the Style of an Example Text](https://github.com/DOsinga/deep_learning_cookbook/blob/master/05.1%20Generating%20Text%20in%20the%20Style%20of%20an%20Example%20Text.ipynb)
 
-We train an LSTM to write Shakespeare. We'll follow this up with one that generates Python code by training a similar
-LSTM on the Python system codebase. Visualizing what the network has learned shows us what the Python producing
-network is paying attention to as it produces or read Python code.
+我们会训练一个循环神经网络（LSTM）来撰写类似莎士比亚文本。 然后，我们会用Python标准库上的代码训练类似的LSTM来生成Python代码。 可视化网络，探索神经网络在生产或读取Python代码时在注意些什么。
 
 #### [06.1 Question matching](https://github.com/DOsinga/deep_learning_cookbook/blob/master/06.1%20Question%20matching.ipynb)
 
-In this notebook we train a network to learn how to match questions and answers from stackoverflow; this sort of indexing
-than allows us to find given a question what the most likely answer in a database is. We try a variety of approaches to
-improve upon the first not terribly great results.
+在本笔记本中，我们训练了一个网络来学习如何匹配来自stackoverflow的问题和答案。 这种索引使我们能够找到给定的问题，数据库中最可能的答案是什么。 我们尝试了多种方法来改善最初并非十分出色的结果。
 
 #### [07.1 Text Classification](https://github.com/DOsinga/deep_learning_cookbook/blob/master/07.1%20Text%20Classification.ipynb)
 
-This notebook shows eight different machine learning approaches to classify texts into a variety of sentiments. The first
-three are classical learners, followed by a number of deep learning models, character or word based and lstm vs cnn. The
-best approach is to combine all approaches in one model.
+该笔记本显示了八种不同的机器学习方法，可将文本分为各种情感。 前三个是古典学习者，其次是许多深度学习模型，基于字符或单词的学习以及lstm vs cnn。 最好的方法是将所有方法组合到一个模型中。
 
 #### [07.2 Emoji Suggestions](https://github.com/DOsinga/deep_learning_cookbook/blob/master/07.2%20Emoji%20Suggestions.ipynb)
 
-We start by harvesting a large set of tweets and we keep the ones that contain exactly one emoji (you can skip this step,
-a training set is included). We then train a number of deep models to use the tweet minus the emoji to predict the missing
-emoji. We end up effectively with a model that can find the best emoji for a given bit of text.
+我们首先收集大量推文，然后保留仅包含一个表情符号的推文（您可以跳过此步骤，其中包括一个训练集）。 然后，我们训练许多深度模型，以使用推特减去表情符号来预测缺失的表情符号。 我们最终以一个可以为给定文本找到最佳表情符号的模型作为最终结果。
 
 #### [07.3 Tweet Embeddings](https://github.com/DOsinga/deep_learning_cookbook/blob/master/07.3%20Tweet%20Embeddings.ipynb)
 
-Some experimental code (not included in the book) to semantically index tweets such that tweets that are similar show
-up next to each other; effectively doing what Word2Vec does for words, but now for tweets.
+一些实验性代码（书中未包含）可在语义上对推文进行索引，以使相似的推文彼此相邻显示； 有效地执行Word2Vec针对单词所做的操作，但现在针对推文执行。
 
 #### [08.1 Sequence to sequence mapping](https://github.com/DOsinga/deep_learning_cookbook/blob/master/08.1%20Sequence%20to%20sequence%20mapping.ipynb)
 #### [08.2 Import Gutenberg](https://github.com/DOsinga/deep_learning_cookbook/blob/master/08.2%20Import%20Gutenberg.ipynb)
 
-Small notebook demonstrating how to download books from the Gutenberg project. Tokenizes a set of book in preparation of
-the subword tokenizing in the next notebook.
+演示如何从Gutenberg项目下载书籍的小笔记本。 在准备下一个笔记本中的子词标记化时，对一组书籍进行标记化。
 
 #### [09.1 Reusing a pretrained image recognition network](https://github.com/DOsinga/deep_learning_cookbook/blob/master/09.1%20Reusing%20a%20pretrained%20image%20recognition%20network.ipynb)
 
-Quick notebook demonstrating how to load a pretrained network and apply it on an image of, well, what else? a cat.
-Shows how to normalize the image and decode the predictions.
+快速笔记本演示了如何加载预训练的网络并将其应用到其他图像上？ 一只猫。 显示如何规范化图像并解码预测。
 
 #### [09.2 Images as embeddings](https://github.com/DOsinga/deep_learning_cookbook/blob/master/09.2%20Images%20as%20embeddings.ipynb)
 
-In this notebook we use the Flickr API to fetch a feed of search results for the search term cat. By running each result through a pre-trained network
-we get vectors that project the images in a 'space'. The center of that space in some way represents the most cat image possible. By reranking on
-distance to that center we can weed out images that are less cat like. Effectively we can improve upon the Flickr search results without
-knowing the content!
+在此笔记本中，我们使用Flickr API来获取搜索项cat的搜索结果供稿。 通过经过预训练的网络运行每个结果，我们得到将图像投影在“空间”中的向量。 该空间的中心以某种方式代表了最多的猫图像。 通过对到该中心的距离重新排序，我们可以剔除不太像猫的图像。 有效地，我们可以在不知道内容的情况下改善Flickr的搜索结果！
 
 #### [09.3 Retraining](https://github.com/DOsinga/deep_learning_cookbook/blob/master/09.3%20Retraining.ipynb)
 #### [10.1 Building an inverse image search service](https://github.com/DOsinga/deep_learning_cookbook/blob/master/10.1%20Building%20an%20inverse%20image%20search%20service.ipynb)
 #### [11.1 Detecting Multiple Images](https://github.com/DOsinga/deep_learning_cookbook/blob/master/11.1%20Detecting%20Multiple%20Images.ipynb)
 
-Use the fact that imag classification networks extract features per larger square sub-image to detect multiple dogs and cats in the same
-image or at least to know where in the image you can find your cat or dog. The approach her is a lot simpler than what is the state of the
-art, but also a lot easier to follow, so a good way to get started.
+利用imag分类网络为每个较大的方形子图像提取特征的事实，以检测同一图像中的多只猫狗，或者至少知道在图像中的什么位置可以找到猫或狗。 她的方法比最新技术要简单得多，但也容易遵循，因此是入门的好方法。
 
 #### [12.1 Activation Optimization](https://github.com/DOsinga/deep_learning_cookbook/blob/master/12.1%20Activation%20Optimization.ipynb)
 #### [12.2 Neural Style](https://github.com/DOsinga/deep_learning_cookbook/blob/master/12.2%20Neural%20Style.ipynb)
@@ -114,4 +95,4 @@ art, but also a lot easier to follow, so a good way to get started.
 #### [16.4 Simple Text Generation](https://github.com/DOsinga/deep_learning_cookbook/blob/master/16.4%20Simple%20Text%20Generation.ipynb)
 #### [Simple Seq2Seq](https://github.com/DOsinga/deep_learning_cookbook/blob/master/Simple%20Seq2Seq.ipynb)
 
-Simple sequence-to-sequence mapping demo. The notebook shows how to teach a network how to form plurals.
+简单的序列到序列映射演示。 笔记本显示了如何教网络如何形成复数。
